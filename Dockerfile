@@ -11,12 +11,19 @@
 #  CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 #  EXPOSE 80
 
+# FROM httpd:2.4
+# RUN apt-get update -y
+# RUN apt-get install git -y
+# RUN git clone https://github.com/Ahmad-Faqehi/loxy.git
+# RUN cp -r loxy/* /usr/local/apache2/htdocs/
+# EXPOSE 80
+
+
 FROM httpd:2.4
 RUN apt-get update -y
 RUN apt-get install git -y
-RUN git clone https://github.com/Ahmad-Faqehi/loxy.git
-RUN cp -r loxy/* /usr/local/apache2/htdocs/
+RUN git clone https://github.com/Ahmad-Faqehi/shopWeb.git
+RUN cp -r shopWeb/* /usr/local/apache2/htdocs/
 EXPOSE 80
-
 
 
